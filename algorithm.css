@@ -1,0 +1,44 @@
+.callout[data-callout="algorithm"] {
+  --callout-color: 163,190,140;
+}
+
+.callout[data-callout="if"],
+.callout[data-callout="elif"],
+.callout[data-callout="else"],
+.callout[data-callout="loop"]
+{
+  --callout-icon: '<svg><svg>';
+}
+
+.callout[data-callout="if"] > .callout-title,
+.callout[data-callout="elif"] > .callout-title,
+.callout[data-callout="else"] > .callout-title,
+.callout[data-callout="loop"] > .callout-title
+{
+  background-color: rgba(var(--background-primary), 1) !important;
+}
+
+.callout[data-callout="if"] > .callout-title > .callout-icon,
+.callout[data-callout="elif"] > .callout-title > .callout-icon,
+.callout[data-callout="else"] > .callout-title > .callout-icon,
+.callout[data-callout="loop"] > .callout-title > .callout-icon
+{
+  display: none;
+}
+
+.callout[data-callout="algorithm"] > div.callout-content {
+  padding-left: 15px
+}
+.callout[data-callout="if"] > div,
+.callout[data-callout="elif"] > div,
+.callout[data-callout="else"] > div,
+.callout[data-callout="loop"] > div,
+.callout[data-callout="codeblock"] > div
+{
+  padding-left: 15px;
+  border-left: 2px solid rgb(var(--callout-color)) !important;
+}
+
+.callout[data-callout="codeblock"] > div.callout-title {
+  display: none;
+}
