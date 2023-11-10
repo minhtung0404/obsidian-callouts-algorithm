@@ -1,4 +1,4 @@
-const commandMap = {
+const commandMap: { [key: string]: string } = {
   "\\algorithm": ">[!algorithm] ",
   "\\input": ">[!input] **Input:** ",
   "\\output": ">[!output] **Output:** ",

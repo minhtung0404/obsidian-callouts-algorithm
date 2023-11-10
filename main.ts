@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { MarkdownView, Plugin } from 'obsidian';
 import { Prec, Extension } from '@codemirror/state';
 import { keymap } from '@codemirror/view';
 import { AlgorithmSuggestor } from 'src/auto_complete';
@@ -25,7 +25,13 @@ export default class CalloutsAlgorithm extends Plugin {
         const command = line.slice(commandCutoff, cursorPlace.ch).toLowerCase();
         let prefix = line.slice(0, commandCutoff);
 
-        editor.replaceRange(commandMap[command], { line: cursorPlace.line, ch: commandCutoff }, { line: cursorPlace.line, ch: cursorPlace.ch });
+        if (commandMap[command] === undefined) return false;
+
+        editor.replaceRange(
+          commandMap[command] + "\n" + prefix + (command === "\\algorithm" ? ">" : ""),
+          { line: cursorPlace.line, ch: commandCutoff },
+          { line: cursorPlace.line, ch: cursorPlace.ch }
+        );
         editor.setCursor({ line: cursorPlace.line, ch: commandMap[command].length + commandCutoff });
         return true;
       }
