@@ -14,6 +14,9 @@ const commandMap: { [key: string]: string } = {
   "\\definition": `>[!math|{"type":"definition","number":"auto","setAsNoteMathLink":false}] Definition. `,
   "\\theorem": `>[!math|{"type":"theorem","number":"auto","setAsNoteMathLink":false}] Theorem. `,
   "\\proposition": `>[!math|{"type":"proposition","number":"auto","setAsNoteMathLink":false}] Proposition. `,
+
+  // other commands
+  "\\example": `>[!example]`,
 };
 
 export { commandMap };
