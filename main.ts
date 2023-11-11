@@ -46,6 +46,8 @@ export default class CalloutsAlgorithm extends Plugin {
 
         const currLine = editor.getLine(editor.getCursor().line);
 
+        if (currLine[0] !== '>') return false;
+
         editor.setSelection({ line: editor.getCursor().line, ch: 0 });
         editor.replaceSelection(">");
         editor.setCursor({ line: editor.getCursor().line, ch: 0 });

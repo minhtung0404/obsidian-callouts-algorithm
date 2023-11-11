@@ -8,7 +8,7 @@ import {
 } from "obsidian";
 
 import CalloutsAlgorithm from "main";
-import { commandMap } from "./commands";
+import { commandMap, initialCommandMap } from "./commands";
 
 export class AlgorithmSuggestor extends EditorSuggest<string> {
   plugin: CalloutsAlgorithm;
@@ -51,7 +51,10 @@ export class AlgorithmSuggestor extends EditorSuggest<string> {
   ): string[] | Promise<string[]> {
     const query = context.query;
 
-    const suggestions = this.algorithmKeywords.filter((value) =>
+    // if start at position 0, use initial commands keywords instead
+    const keywords = (context.start.ch == 0) ? this.initialCommandsKeywords : this.algorithmKeywords;
+
+    const suggestions = keywords.filter((value) =>
       value.toLowerCase().startsWith(query.toLowerCase())
     );
 
@@ -82,4 +85,5 @@ export class AlgorithmSuggestor extends EditorSuggest<string> {
   }
 
   private algorithmKeywords: string[] = Object.keys(commandMap);
+  private initialCommandsKeywords: string[] = Object.keys(initialCommandMap);
 }
