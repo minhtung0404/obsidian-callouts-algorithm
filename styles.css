@@ -49,6 +49,8 @@ If your plugin does not need CSS, delete this file.
 .callout[data-callout="codeblock"] > div
 {
   padding-left: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   border-left: 2px solid rgb(var(--callout-color)) !important;
 }
 

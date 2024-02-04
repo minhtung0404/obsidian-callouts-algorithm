@@ -3,10 +3,11 @@ const initialCommandMap: { [key: string]: string } = {
   "\\algorithm": ">[!algorithm] ",
 
   // Math commands
-  "\\definition": `>[!math|{"type":"definition","number":"auto","setAsNoteMathLink":false}] Definition. `,
-  "\\theorem": `>[!math|{"type":"theorem","number":"auto","setAsNoteMathLink":false}] Theorem. `,
-  "\\proposition": `>[!math|{"type":"proposition","number":"auto","setAsNoteMathLink":false}] Proposition. `,
-  "\\lemma": `>[!math|{"type":"lemma","number":"auto","setAsNoteMathLink":false}] Lemma. `,
+  "\\definition": `>[!definition] `,
+  "\\theorem": `>[!theorem] `,
+  "\\proposition": `>[!proposition] `,
+  "\\lemma": `>[!lemma] `,
+  "\\claim": `>[!claim] `,
 
   // other commands
   "\\example": `>[!example]`,
